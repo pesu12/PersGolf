@@ -265,5 +265,10 @@ class CourseController implements \Anax\DI\IInjectionAware
       'courses' => $all,
       'title' => "Spelade banor",
     ]);
+
+    $this->views->add('courses/addcourse', [
+      'courses' => $all,
+      'title' => "Ny bana",
+    ]);
   }
 }

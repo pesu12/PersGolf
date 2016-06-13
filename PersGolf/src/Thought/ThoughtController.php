@@ -265,5 +265,10 @@ class ThoughtController implements \Anax\DI\IInjectionAware
       'thoughts' => $all,
       'title' => "Spontana tankar",
     ]);
+
+    $this->views->add('thoughts/addthought', [
+      'thoughts' => $all,
+      'title' => "Ny spontan tanke",
+    ]);
   }
 }

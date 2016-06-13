@@ -265,5 +265,10 @@ class OtherController implements \Anax\DI\IInjectionAware
       'others' => $all,
       'title' => "Övrigt",
     ]);
+
+    $this->views->add('others/addother', [
+      'others' => $all,
+      'title' => "Ny övrig aktivitet",
+    ]);
   }
 }

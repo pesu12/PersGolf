@@ -265,5 +265,10 @@ class CalenderController implements \Anax\DI\IInjectionAware
       'calenders' => $all,
       'title' => "Kalenderaktiviteter",
     ]);
+
+    $this->views->add('calenders/addcalender', [
+      'calenders' => $all,
+      'title' => "Ny aktivitet",
+    ]);
   }
 }

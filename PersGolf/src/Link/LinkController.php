@@ -265,5 +265,10 @@ class LinkController implements \Anax\DI\IInjectionAware
       'links' => $all,
       'title' => "Länkar",
     ]);
+
+    $this->views->add('links/addlink', [
+      'links' => $all,
+      'title' => "Ny länk",
+    ]);
   }
 }
