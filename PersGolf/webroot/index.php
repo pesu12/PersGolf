@@ -62,6 +62,16 @@ $di->setShared('db', function() use ($di) {
 
 
 //For the Firstpage page
+$app->router->add('', function() use ($app) {
+  $app->theme->addStylesheet('css/anax-grid/style.php');
+  $app->dispatcher->forward([
+    'controller'    => 'Firstpage',
+    'action'         => 'index',
+    'params'        => [],
+  ]);
+});
+
+//For the Firstpage page
 $app->router->add('Firstpage', function() use ($app) {
   $app->theme->addStylesheet('css/anax-grid/style.php');
   $app->dispatcher->forward([

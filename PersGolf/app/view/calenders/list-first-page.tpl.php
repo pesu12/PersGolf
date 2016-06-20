@@ -9,14 +9,13 @@
       <td width="30%">
           <?= $calender->Date ?>
       </td>
-      <td width="50%" align="left">
+      <td width="50%">
           <?= $calender->Activity ?>
       </td>
       <td width="10%" align="right">
         <td>
           <b><a href="<?= $this->url->create('calender/update/')?> "title="Ändra" class="id">Ändra</a></b>
         </td>
-      </td>
     </tr>
   <?php endforeach; ?>
 </table>

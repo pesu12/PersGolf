@@ -88,24 +88,30 @@ class LinkController implements \Anax\DI\IInjectionAware
   }
 
   /**
-  * Add new question for user.
+  * Add new link.
   *
-  * @param string $id of user to add.
+  * @param string $id of link to add.
   *
   * @return void
   */
-  public function addQuestionAction($id = null)
+  public function addAction($id = null)
   {
     $this->di->session();
-    $this->users->theme->addStylesheet('css/anax-grid/style.php');
-    $form = new \Anax\HTMLForm\CFormPsWebAddUser();
-    $form->setDI($this->di);
-    $form->check();
-    $this->di->theme->setTitle("Users Add Menu");
-    $this->di->views->add('default/page', [
-      'title' => "Users Add Menu",
-      'content' => $form->getHTML()
-    ]);
+    $this->links->theme->addStylesheet('css/anax-grid/style.php');
+    $isPosted = $this->request->getPost('doAddLink');
+
+    if (!$isPosted) {
+        $this->response->redirect($this->request->getPost('redirect'));
+    }
+
+    $activity = [
+        'Link' => $this->request->getPost('link'),
+        'Description' => $this->request->getPost('description'),
+    ];
+
+    $this->links->setDI($this->di);
+    $all = $this->links->create($activity);
+    $this->response->redirect($this->di->get('url')->create('Link'));
   }
 
   /**

@@ -88,25 +88,31 @@ class OtherController implements \Anax\DI\IInjectionAware
   }
 
   /**
-  * Add new question for user.
+  * Add new other.
   *
-  * @param string $id of user to add.
+  * @param string $id of other.
   *
   * @return void
   */
-  public function addQuestionAction($id = null)
+  public function addAction($id = null)
   {
     $this->di->session();
-    $this->users->theme->addStylesheet('css/anax-grid/style.php');
-    $form = new \Anax\HTMLForm\CFormPsWebAddUser();
-    $form->setDI($this->di);
-    $form->check();
-    $this->di->theme->setTitle("Users Add Menu");
-    $this->di->views->add('default/page', [
-      'title' => "Users Add Menu",
-      'content' => $form->getHTML()
-    ]);
+    $this->others->theme->addStylesheet('css/anax-grid/style.php');
+    $isPosted = $this->request->getPost('doAddOther');
+
+    if (!$isPosted) {
+        $this->response->redirect($this->request->getPost('redirect'));
+    }
+
+    $activity = [
+        'Other' => $this->request->getPost('other'),
+    ];
+
+    $this->others->setDI($this->di);
+    $all = $this->others->create($activity);
+    $this->response->redirect($this->di->get('url')->create('Other'));
   }
+
 
   /**
   * Get ussr to update.

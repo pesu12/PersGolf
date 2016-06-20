@@ -88,24 +88,31 @@ class CalenderController implements \Anax\DI\IInjectionAware
   }
 
   /**
-  * Add new question for user.
+  * Add new activity for calender.
   *
-  * @param string $id of user to add.
+  * @param string $id of calender activity to add.
   *
   * @return void
   */
-  public function addQuestionAction($id = null)
+  public function addAction($id = null)
   {
     $this->di->session();
-    $this->users->theme->addStylesheet('css/anax-grid/style.php');
-    $form = new \Anax\HTMLForm\CFormPsWebAddUser();
-    $form->setDI($this->di);
-    $form->check();
-    $this->di->theme->setTitle("Users Add Menu");
-    $this->di->views->add('default/page', [
-      'title' => "Users Add Menu",
-      'content' => $form->getHTML()
-    ]);
+    $this->calenders->theme->addStylesheet('css/anax-grid/style.php');
+    $isPosted = $this->request->getPost('doAddCalender');
+
+    if (!$isPosted) {
+        $this->response->redirect($this->request->getPost('redirect'));
+    }
+
+    $now = new \DateTime();
+    $activity = [
+        'Date'     => $now->format('Y-m-d H:i:s'),
+        'activity' => $this->request->getPost('activity'),
+    ];
+
+    $this->calenders->setDI($this->di);
+    $all = $this->calenders->create($activity);
+    $this->response->redirect($this->di->get('url')->create('Calender'));
   }
 
   /**

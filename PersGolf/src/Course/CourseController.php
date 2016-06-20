@@ -88,24 +88,32 @@ class CourseController implements \Anax\DI\IInjectionAware
   }
 
   /**
-  * Add new question for user.
+  * Add new activity for course.
   *
-  * @param string $id of user to add.
+  * @param string $id of course activity to add.
   *
   * @return void
   */
-  public function addQuestionAction($id = null)
+  public function addAction($id = null)
   {
     $this->di->session();
-    $this->users->theme->addStylesheet('css/anax-grid/style.php');
-    $form = new \Anax\HTMLForm\CFormPsWebAddUser();
-    $form->setDI($this->di);
-    $form->check();
-    $this->di->theme->setTitle("Users Add Menu");
-    $this->di->views->add('default/page', [
-      'title' => "Users Add Menu",
-      'content' => $form->getHTML()
-    ]);
+    $this->courses->theme->addStylesheet('css/anax-grid/style.php');
+    $isPosted = $this->request->getPost('doAddCourse');
+
+    if (!$isPosted) {
+        $this->response->redirect($this->request->getPost('redirect'));
+    }
+
+    $now = new \DateTime();
+    $activity = [
+        'Date'     => $now->format('Y-m-d H:i:s'),
+        'Course' => $this->request->getPost('course'),
+        'Information' => $this->request->getPost('information'),
+    ];
+
+    $this->courses->setDI($this->di);
+    $all = $this->courses->create($activity);
+    $this->response->redirect($this->di->get('url')->create('Course'));
   }
 
   /**
