@@ -1,16 +1,16 @@
 <i><h2><?=$title?></h2></i>
 
 <table style="width:80%">
-  <?php foreach ($calenders as $calender) : ?>
+  <?php foreach ($links as $link) : ?>
     <tr>
       <td width="10%">
-          <?= $calender->Id ?>
+          <?= $link->Id ?>
       </td>
       <td width="30%">
-          <?= $calender->Date ?>
+          <?= $link->Link ?>
       </td>
       <td width="60%">
-          <?= $calender->Activity ?>
+          <?= $link->Description ?>
       </td>
     </tr>
   <?php endforeach; ?>
