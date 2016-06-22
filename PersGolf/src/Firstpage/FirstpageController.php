@@ -35,7 +35,7 @@ class FirstpageController implements \Anax\DI\IInjectionAware
   public function indexAction()
   {
     $this->calenders->setDI($this->di);
-    $all = $this->calenders->findAll();
+    $all = $this->calenders->findForFirstPage();
     $this->theme->setTitle("Kalenderaktiviteter");
     $this->views->add('calenders/list-first-page', [
       'calenders' => $all,
@@ -43,7 +43,7 @@ class FirstpageController implements \Anax\DI\IInjectionAware
     ]);
 
     $this->thoughts->setDI($this->di);
-    $all = $this->thoughts->findAll();
+    $all = $this->thoughts->findForFirstPage();
     $this->theme->setTitle("Spontana tankar");
     $this->views->add('thoughts/list-first-page', [
       'thoughts' => $all,
@@ -51,7 +51,7 @@ class FirstpageController implements \Anax\DI\IInjectionAware
     ]);
 
     $this->courses->setDI($this->di);
-    $all = $this->courses->findAll();
+    $all = $this->courses->findForFirstPage();
     $this->theme->setTitle("Spelade banor");
     $this->views->add('courses/list-first-page', [
       'courses' => $all,
