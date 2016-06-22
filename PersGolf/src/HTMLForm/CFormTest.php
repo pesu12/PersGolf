@@ -1,6 +1,6 @@
 <?php
 
-namespace Mos\HTMLForm;
+namespace Anax\HTMLForm;
 
 /**
  * HTML Form elements.
@@ -17,7 +17,7 @@ class CFormTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreate1()
     {
-        $form = new \Mos\HTMLForm\CForm();
+        $form = new \Anax\HTMLForm\CForm();
         $form->create();
         $res = $form->getHTML();
         $exp = <<<EOD
@@ -43,7 +43,7 @@ EOD;
      */
 /*    public function testCreate2()
     {
-        $form = new \Mos\HTMLForm\CForm();
+        $form = new \Anax\HTMLForm\CForm();
 
         $form->create([], [
             'test' => [

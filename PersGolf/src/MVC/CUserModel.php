@@ -201,7 +201,30 @@ public function setProperties($properties)
   }
 }
 
+/**
+* Update row.
+*
+* @param array $values key/values to save.
+*
+* @return boolean true or false if saving went okey.
+*/
+public function update($values)
+{
+   $keys   = array_keys($values);
+   $values = array_values($values);
 
+   // Its update, remove id and use as where-clause
+   unset($keys['Id']);
+   $values[] = $this->Id;
+
+   $this->db->update(
+       $this->getSource($values),
+       $keys,
+       "Id = ?"
+   );
+
+   return $this->db->execute($values);
+}
 
 /**
 * Build the where part.

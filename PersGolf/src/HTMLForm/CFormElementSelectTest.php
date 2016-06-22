@@ -1,6 +1,6 @@
 <?php
 
-namespace Mos\HTMLForm;
+namespace Anax\HTMLForm;
 
 /**
  * HTML Form elements.
@@ -22,7 +22,7 @@ class CFormElementSelectTest extends \PHPUnit_Framework_TestCase
             "options" => []
         ];
         
-        $elem = new \Mos\HTMLForm\CFormElementSelect($name, $attr);
+        $elem = new \Anax\HTMLForm\CFormElementSelect($name, $attr);
 
         $res = $elem['name'];
         $exp = $name;
@@ -46,7 +46,7 @@ class CFormElementSelectTest extends \PHPUnit_Framework_TestCase
     /**
      * Test
      *
-     * @expectedException \Mos\HTMLForm\CFormException
+     * @expectedException \Anax\HTMLForm\CFormException
      *
      */
     public function testCreateException()
@@ -54,7 +54,7 @@ class CFormElementSelectTest extends \PHPUnit_Framework_TestCase
         $name = "name";
         $attr = [];
         
-        $elem = new \Mos\HTMLForm\CFormElementSelect($name, $attr);
+        $elem = new \Anax\HTMLForm\CFormElementSelect($name, $attr);
     }
 
 
@@ -71,7 +71,7 @@ class CFormElementSelectTest extends \PHPUnit_Framework_TestCase
             "options" => []
         ];
         
-        $elem = new \Mos\HTMLForm\CFormElementSelect($name, $attr);
+        $elem = new \Anax\HTMLForm\CFormElementSelect($name, $attr);
 
         $res = $elem->getHTML();
         $exp = <<<EOD
@@ -105,7 +105,7 @@ EOD;
             ],
         ];
         
-        $elem = new \Mos\HTMLForm\CFormElementSelect($name, $attr);
+        $elem = new \Anax\HTMLForm\CFormElementSelect($name, $attr);
 
         $res = $elem->getHTML();
         $exp = <<<EOD

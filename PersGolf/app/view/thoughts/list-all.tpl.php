@@ -12,12 +12,9 @@
       <td width="20%" align="left">
           <?= $thouhgt->Category ?>
       </td>
-      <td width="30%">
+      <td width="40%">
           <?= $thouhgt->Activity ?>
       </td>
-      <td width="10%" align="right">
-          <b><a href="<?= $this->url->create('thoughts/update/')?> "title="Ändra" class="id">Ändra</a></b>
-        </td>
     </tr>
   <?php endforeach; ?>
 </table>

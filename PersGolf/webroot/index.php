@@ -29,6 +29,12 @@ $di->set('FirstpageController', function () use ($di) {
   return $controller;
 });
 
+$di->set('FormController', function () use ($di) {
+  $controller = new \Anax\HTMLForm\FormController();
+  $controller->setDI($di);
+  return $controller;
+});
+
 $di->set('LinkController', function () use ($di) {
   $controller = new \Anax\Link\LinkController();
   $controller->setDI($di);

@@ -4,9 +4,9 @@
  *
  * @author Mikael Roos, me@mikaelroos.se
  * @copyright Mikael Roos 2010 - 2014
- * @link https://github.com/mosbth/csource
+ * @link https://github.com/Anaxbth/csource
  */
-namespace Mos\Source;
+namespace Anax\Source;
 class CSource {
 
   /**

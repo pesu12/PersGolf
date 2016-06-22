@@ -214,13 +214,13 @@ select * from QuestionResponse;
 /*Skapa användare, logga in med användare */
 
 
-/*Förstasida Most active user*/
+/*Förstasida Anaxt active user*/
 select Username from User group by Id order by count(*) desc limit 2;
 
 /*Förstasida Latest questions */
 select Questionheader from Question order by Id desc limit 1;
 
-/* Most popular tag */
+/* Anaxt popular tag */
 select Tagname from Tag group by Tagname order by count(*) desc limit 2;
 
 /*Frågesida*/

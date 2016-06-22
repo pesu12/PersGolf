@@ -1,6 +1,6 @@
 <?php
 
-namespace Mos\HTMLForm;
+namespace Anax\HTMLForm;
 
 /**
  * HTML Form elements.
@@ -17,7 +17,7 @@ class CFormElementTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateElement()
     {
-        $el = new \Mos\HTMLForm\CFormElement('test');
+        $el = new \Anax\HTMLForm\CFormElement('test');
 
         $res = $el['name'];
         $exp = 'test';
@@ -40,7 +40,7 @@ class CFormElementTest extends \PHPUnit_Framework_TestCase
      */
     public function testValidationRuleNotFound()
     {
-        $el = new \Mos\HTMLForm\CFormElement('test');
+        $el = new \Anax\HTMLForm\CFormElement('test');
 
         $el->validate(['no-such-rule']);
     }
@@ -55,7 +55,7 @@ class CFormElementTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetValue()
     {
-        $el = new \Mos\HTMLForm\CFormElement('test', ['value' => 42]);
+        $el = new \Anax\HTMLForm\CFormElement('test', ['value' => 42]);
 
         $res = $el['value'];
         $exp = 42;
@@ -76,9 +76,9 @@ class CFormElementTest extends \PHPUnit_Framework_TestCase
      */
     public function testValidateEmail()
     {
-        $el = new \Mos\HTMLForm\CFormElement('test');
+        $el = new \Anax\HTMLForm\CFormElement('test');
 
-        $el['value'] = 'mos@dbwebb.se';
+        $el['value'] = 'Anax@dbwebb.se';
         $res = $el->validate(['email_adress']);
         $this->assertTrue($res, "Validation email fails.");
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Mos\HTMLForm;
+namespace Anax\HTMLForm;
 
 /**
  * Form element
@@ -19,15 +19,15 @@ class CFormElementCheckbox extends CFormElement
         parent::__construct($name, $attributes);
 
         $this['type'] = 'checkbox';
-        
+
         $this['checked'] = isset($attributes['checked'])
             ? $attributes['checked']
             : false;
-            
+
         $this['value'] = isset($attributes['value'])
             ? $attributes['value']
             : $name;
-            
+
         $this->UseNameAsDefaultLabel(null);
     }
 }

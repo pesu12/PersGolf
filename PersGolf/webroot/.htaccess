@@ -6,7 +6,7 @@ ErrorDocument 404 "This is a Anax 404. Document is not here."
 #<IfModule mod_rewrite.c>
 #  RewriteEngine on
 #
-#  # Must use RewriteBase on www.student.bth.se, Rewritebase for url /~mos/test is /~mos/test/
+#  # Must use RewriteBase on www.student.bth.se, Rewritebase for url /~Anax/test is /~Anax/test/
 #  #RewriteBase /change/this/to/site/base/url/if/needed/
 #
 #  RewriteCond %{REQUEST_FILENAME} !-f
@@ -18,7 +18,7 @@ ErrorDocument 404 "This is a Anax 404. Document is not here."
 <IfModule mod_rewrite.c>
   RewriteEngine on
 
-  # Must use RewriteBase on www.student.bth.se, Rewritebase for url /~mos/test is /~mos/test/
+  # Must use RewriteBase on www.student.bth.se, Rewritebase for url /~Anax/test is /~Anax/test/
   #RewriteBase /change/this/to/site/base/url/if/needed/
 
   RewriteCond %{REQUEST_FILENAME} !-f

@@ -123,7 +123,7 @@ class UserController implements \Anax\DI\IInjectionAware
     $form->setDI($this->di);
     $form->check();
 
-    $this->di->views->add('questions/viewtitle', [
+    $this->di->views->add('users/viewtitle', [
       'title' => "Uppdatera användare"
     ]);
 
@@ -132,9 +132,6 @@ class UserController implements \Anax\DI\IInjectionAware
       'content' => $form->getHTML()
     ]);
 
-    $this->di->views->add('users/notupdatepassword', [
-      'title' => ""
-    ]);
   }
 
   /**

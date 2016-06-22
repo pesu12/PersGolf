@@ -16,7 +16,6 @@ class CFormPsWebUpdateUser extends \Anax\HTMLForm\CForm
     *
     */
     $_POST['Id']=$user->Id;
-    $_POST['pw']=$user->Userpassword;
     parent::__construct([], [
       'name' => [
         'type'        => 'text',
@@ -28,24 +27,24 @@ class CFormPsWebUpdateUser extends \Anax\HTMLForm\CForm
         'value'		  => isset($user) ? $user->Username : '',
       ],
 
-      'acronym' => [
+      'golfclub' => [
         'type'        => 'text',
         'class'       => 'form-control',
-        'label'       => 'Akronym:',
+        'label'       => 'Golfklubb:',
         'autofocus'   => true,
         'required'    => true,
         'validation'  => ['not_empty'],
-        'value'		  => isset($user) ? $user->Acronym : '',
+        'value'		  => isset($user) ? $user->Golfclub : '',
       ],
 
-      'email' => [
+      'handicap' => [
         'type'        => 'text',
         'class'       => 'form-control',
-        'label'       => 'Email:',
+        'label'       => 'Handikapp:',
         'autofocus'   => true,
         'required'    => true,
-        'validation'  => ['not_empty','email_adress'],
-        'value'		  => isset($user) ? $user->Email : '',
+        'validation'  => ['not_empty'],
+        'value'		  => isset($user) ? $user->Handicap : '',
       ],
 
       'uppdatera' => [
@@ -80,11 +79,10 @@ class CFormPsWebUpdateUser extends \Anax\HTMLForm\CForm
     $this->users->saveToDB([
       'Id' => $_POST['Id'],
       'Username' => $_POST['name'],
-      'Acronym' => $_POST['acronym'],
-      'Email' => $_POST['email'],
-      'Userpassword' => $_POST['pw'],
+      'Golfclub' => $_POST['golfclub'],
+      'Handicap' => $_POST['handicap'],
     ]);
-    $this->redirectTo('index.php/user');
+    $this->redirectTo($this->di->get('url')->create('User'));
     return true;
   }
 
@@ -97,7 +95,7 @@ class CFormPsWebUpdateUser extends \Anax\HTMLForm\CForm
   {
     $this->users = new \Anax\User\User();
     $this->users->setDI($this->di);
-    $this->redirectTo('index.php/user');
+    $this->redirectTo($this->di->get('url')->create('User'));
   }
 
   /**
@@ -109,6 +107,6 @@ class CFormPsWebUpdateUser extends \Anax\HTMLForm\CForm
   {
     $this->users = new \Anax\User\User();
     $this->users->setDI($this->di);
-    $this->redirectTo('index.php/user');
+    $this->redirectTo($this->di->get('url')->create('User'));
   }
 }

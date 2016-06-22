@@ -1,13 +1,13 @@
 <?php
 
-namespace Mos\HTMLForm;
+namespace Anax\HTMLForm;
 
 /**
  * Ordinary input form element
  */
 class CFormElementText extends CFormElement
 {
-    
+
     /**
      * Constructor
      *
