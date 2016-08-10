@@ -1,5 +1,5 @@
 <div class='comment-form'>
-  <form method=post style="width: 80%">
+  <form method=post style="width: 60%">
     <fieldset>
       <?=$other=''; ?>
       <?php //Fill in data for a new activity?>

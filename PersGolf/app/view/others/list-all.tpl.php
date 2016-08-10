@@ -1,4 +1,5 @@
-<i><h2><?=$title?></h2></i>
+<i class="fa fa-comment"></i>
+<b><?=$title?></b>
 
 <table style="width:80%">
   <?php foreach ($others as $other) : ?>
@@ -12,5 +13,4 @@
     </tr>
   <?php endforeach; ?>
 </table>
-</br>
 </br>

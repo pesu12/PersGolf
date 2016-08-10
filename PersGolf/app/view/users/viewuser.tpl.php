@@ -1,4 +1,4 @@
-<i><h2><?=$title?></h2></i>
+<i><b>Profil</b></i>
 
 <table style="width:50%">
   <tr>
@@ -13,7 +13,7 @@
   </tr>
   <tr>
     <td>
-      <b><a href="<?= $this->url->create('user/update/')?> "title="Uppdatera användare" class="id">Uppdatera profil</a></b>      
+      <b><a href="<?= $this->url->create('user/update/')?> "title="Uppdatera användare" class="id">Uppdatera profil</a></b>
     </td>
   </tr>
 </table>

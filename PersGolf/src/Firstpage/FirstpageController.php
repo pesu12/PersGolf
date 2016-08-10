@@ -57,5 +57,16 @@ class FirstpageController implements \Anax\DI\IInjectionAware
       'courses' => $all,
       'title' => "Spelade banor",
     ]);
+
+    //Sidebar
+    $this->links = new \Anax\Link\Link();
+    $this->links->setDI($this->di);
+
+    $all = $this->links->findAll();
+    $this->theme->setTitle("Länkar");
+    $this->views->add('links/list-all', [
+      'links' => $all,
+      'title' => "Länkar",
+    ],'sidebar');
   }
 }

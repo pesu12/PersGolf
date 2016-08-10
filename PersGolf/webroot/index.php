@@ -97,6 +97,36 @@ $app->router->add('Calender', function() use ($app) {
   ]);
 });
 
+//For the Thought page
+$app->router->add('Thought', function() use ($app) {
+  $app->theme->addStylesheet('css/anax-grid/style.php');
+  $app->dispatcher->forward([
+    'controller'    => 'Thought',
+    'action'         => 'index',
+    'params'        => [],
+  ]);
+});
+
+//For the Courses page
+$app->router->add('Course', function() use ($app) {
+  $app->theme->addStylesheet('css/anax-grid/style.php');
+  $app->dispatcher->forward([
+    'controller'    => 'Course',
+    'action'         => 'index',
+    'params'        => [],
+  ]);
+});
+
+//For the user page
+$app->router->add('User', function() use ($app) {
+  $app->theme->addStylesheet('css/anax-grid/style.php');
+  $app->dispatcher->forward([
+    'controller'    => 'User',
+    'action'         => 'index',
+    'params'        => [],
+  ]);
+});
+
 //For the Link page
 $app->router->add('Link', function() use ($app) {
   $app->theme->addStylesheet('css/anax-grid/style.php');
@@ -115,26 +145,7 @@ $app->router->add('Other', function() use ($app) {
     'action'         => 'index',
     'params'        => [],
   ]);
-});
 
-//For the Thought page
-$app->router->add('Thought', function() use ($app) {
-  $app->theme->addStylesheet('css/anax-grid/style.php');
-  $app->dispatcher->forward([
-    'controller'    => 'Thought',
-    'action'         => 'index',
-    'params'        => [],
-  ]);
-});
-
-//For the user page
-$app->router->add('User', function() use ($app) {
-  $app->theme->addStylesheet('css/anax-grid/style.php');
-  $app->dispatcher->forward([
-    'controller'    => 'User',
-    'action'         => 'index',
-    'params'        => [],
-  ]);
 });
 
 $app->router->handle();

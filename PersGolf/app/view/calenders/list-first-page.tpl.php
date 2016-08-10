@@ -1,5 +1,5 @@
-<i><h2><?=$title?></h2></i>
-
+<i class="fa fa-calendar"></i>
+<b><?=$title?></b>
 <table style="width:80%">
   <?php foreach ($calenders as $calender) : ?>
     <tr>
@@ -15,5 +15,4 @@
     </tr>
   <?php endforeach; ?>
 </table>
-</br>
 </br>

@@ -1,4 +1,5 @@
-<i><h2><?=$title?></h2></i>
+<i class="fa fa-book"></i>
+<b><?=$title?></b>
 
 <table style="width:80%">
   <?php foreach ($thoughts as $thouhgt) : ?>
@@ -18,5 +19,4 @@
     </tr>
   <?php endforeach; ?>
 </table>
-</br>
 </br>

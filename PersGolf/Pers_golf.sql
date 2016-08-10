@@ -2,6 +2,9 @@ create database mingolf;
 use mingolf;
 
 DROP TABLE IF EXISTS User;
+DROP TABLE IF EXISTS Calender;
+DROP TABLE IF EXISTS Thought;
+DROP TABLE IF EXISTS Course;
 
 CREATE TABLE User
 ( Id int NOT NULL AUTO_INCREMENT,
@@ -43,7 +46,7 @@ CREATE TABLE Course
   Primary key (Id) 
 ) ENGINE INNODB CHARACTER SET utf8;
 
-insert into Course (Date,Course,Information) values(NOW(),'Ågest 9 hål','35 poäng');
+insert into Course (Date,Course,Information) values(NOW(),'Ågesta 9 hål','35 poäng');
 select * from Course;
 
 CREATE TABLE Link

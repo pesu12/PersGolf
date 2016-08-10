@@ -26,10 +26,12 @@
 </div>
 <?php endif; ?>
 
-<div id='main'>
-<?php if(isset($main)) echo $main?>
-<?php $this->views->render('main')?>
+<?php if ($this->views->hasContent('main','sidebar')) : ?>
+<div id='wrap-main'>
+    <div id='main'><?php $this->views->render('main')?></div>
+    <div id='sidebar'><?php $this->views->render('sidebar')?></div>
 </div>
+<?php endif; ?>
 
 <div id='footer'>
 <?php if(isset($footer)) echo $footer?>
