@@ -64,7 +64,7 @@ class FirstpageController implements \Anax\DI\IInjectionAware
 
     $all = $this->links->findAll();
     $this->theme->setTitle("Länkar");
-    $this->views->add('links/list-all', [
+    $this->views->add('links/sidebar-links', [
       'links' => $all,
       'title' => "Länkar",
     ],'sidebar');
